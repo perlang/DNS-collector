@@ -389,10 +389,10 @@ func (t *FilteringTransform) downsampleFilter(dm *dnsutils.DNSMessage) (int, err
 	// If the remainder is zero, reset the downsampleCount to 0 and drop the DNS message by returning false.
 	case 0:
 		t.downsampleCount = 0
-		return ReturnDrop, nil
+		return ReturnKeep, nil
 
 	// If the remainder is not zero, keep the DNS message and return true.
 	default:
-		return ReturnKeep, nil
+		return ReturnDrop, nil
 	}
 }
