@@ -420,11 +420,11 @@ func TestFilteringMultipleFilters(t *testing.T) {
 	}
 }
 
-func TestDownsampleFilter(t *testing.T) {
+func TestFilteringDownsampleFilter(t *testing.T) {
 	// config
 	config := pkgconfig.GetFakeConfigTransformers()
 	config.Filtering.Enable = true
-	config.Filtering.Downsample = 3 // Garder 1 message sur 3
+	config.Filtering.Downsample = 3
 
 	outChans := []chan dnsutils.DNSMessage{}
 
